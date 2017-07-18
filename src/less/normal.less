@@ -1,0 +1,49 @@
+ul, li, div,a, span {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Microsoft Yahei';
+    font-size: 14px;
+}
+body {
+    background: url(http://oo7a0zmzl.bkt.clouddn.com/17-7-18/69501293.jpg) center center no-repeat;
+}
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    height: 35px;
+    width: 100%;
+    
+    a {
+        color: #fff;
+        margin-left: 20px;
+    }
+    .add-note {
+        position: absolute;
+        top: 8px;
+        left: 5px;
+    }
+    
+    .user-area{
+        display: inline-block;
+        position: absolute;
+        top: 8px;
+        left: 1160px;
+        vertical-align: bottom;
+        width: 100%;
+
+        li {
+            float: left;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    } 
+}
+
