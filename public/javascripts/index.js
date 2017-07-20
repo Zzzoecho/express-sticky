@@ -11132,7 +11132,7 @@ Note.prototype = {
         $noteHead.on('mousedown', function(e){
             var evtX = e.pageX - $note.offset().left,  //计算事件的触发点在dialog内部到dialog左边缘的距离
                 evtY = e.pageY - $note.offset().top
-            $note.addClass('draggable'),data('evtPos', {x: evtX, y:evtY})  //添加class代表note被鼠标选中在移动状态
+            $note.addClass('draggable').data('evtPos', {x: evtX, y:evtY})  //添加class代表note被鼠标选中在移动状态
         }).on('mouseup', function(){
             $note.removeClass('draggable').removeData('pos')
         })
