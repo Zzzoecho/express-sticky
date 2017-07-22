@@ -11274,7 +11274,7 @@ var WaterFall = (function () {
 
             $cur.css({
                 left: nodeWidth * idx,
-                top: minSumHeight + 45,
+                top: minSumHeight + 50,
                 opacity: 1
             })
             
@@ -11333,7 +11333,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "ul,\nli,\ndiv,\na,\nspan {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  text-decoration: none;\n  font-family: 'Microsoft Yahei';\n  font-size: 14px;\n}\nbody {\n  background: url(http://oo7a0zmzl.bkt.clouddn.com/17-7-18/69501293.jpg) center center no-repeat;\n}\n#header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #222;\n  height: 35px;\n  width: 100%;\n}\n#header a {\n  color: #fff;\n  margin-left: 20px;\n}\n#header .add-note {\n  position: absolute;\n  top: 8px;\n  left: 5px;\n}\n#header .user-area {\n  display: inline-block;\n  position: absolute;\n  top: 8px;\n  left: 1160px;\n  vertical-align: bottom;\n  width: 100%;\n}\n#header .user-area li {\n  float: left;\n}\n#header .user-area::after {\n  content: '';\n  display: block;\n  clear: both;\n}\n", ""]);
+exports.push([module.i, "ul,\nli,\ndiv,\na,\nspan {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  text-decoration: none;\n  font-family: 'Microsoft Yahei';\n  font-size: 14px;\n}\nbody {\n  background: url(http://oo7a0zmzl.bkt.clouddn.com/17-7-18/69501293.jpg) center center no-repeat;\n}\n#header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #222;\n  height: 40px;\n  width: 100%;\n}\n#header a {\n  color: #fff;\n  margin: 0 10px;\n}\n#header span {\n  color: #fff;\n  margin: 0 5px;\n}\n#header .add-note {\n  position: absolute;\n  top: 10px;\n  left: 5px;\n}\n#header .user-area {\n  display: inline-block;\n  position: absolute;\n  top: 10px;\n  left: 1160px;\n  vertical-align: bottom;\n  width: 100%;\n}\n#header .user-area li {\n  float: left;\n}\n#header .user-area li img {\n  margin-top: -4px;\n  width: 30px;\n  border-radius: 50%;\n}\n#header .user-area::after {\n  content: '';\n  display: block;\n  clear: both;\n}\n", ""]);
 
 // exports
 

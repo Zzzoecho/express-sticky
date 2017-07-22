@@ -29,7 +29,7 @@ var WaterFall = (function () {
 
             $cur.css({
                 left: nodeWidth * idx,
-                top: minSumHeight + 45,
+                top: minSumHeight + 50,
                 opacity: 1
             })
             

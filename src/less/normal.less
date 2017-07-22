@@ -14,29 +14,41 @@ body {
     top: 0;
     left: 0;
     background-color: #222;
-    height: 35px;
+    height: 40px;
     width: 100%;
     
     a {
         color: #fff;
-        margin-left: 20px;
+        margin: 0 10px;
     }
+
+    span {
+        color: #fff;
+        margin: 0 5px;
+    }
+
     .add-note {
         position: absolute;
-        top: 8px;
+        top: 10px;
         left: 5px;
     }
     
     .user-area{
         display: inline-block;
         position: absolute;
-        top: 8px;
+        top: 10px;
         left: 1160px;
         vertical-align: bottom;
         width: 100%;
 
         li {
             float: left;
+        }
+
+        li img {
+            margin-top: -4px;
+            width: 30px;
+            border-radius: 50%;
         }
 
         &::after {

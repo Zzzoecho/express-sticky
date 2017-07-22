@@ -2,19 +2,28 @@
 <html>
   <head>
     <title>便利贴</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <div id="header">
       <a href="#" class="add-note" title="添加笔记"><span class="fa fa-plus">添加</span></a>
       <ul class="user-area">
-        <li><a href="/auth/github" class="login" title="Github登录">Github登录</a></li>
-        <li><a href="/auth/jirengu" class="login" title="饥人谷登录">饥人谷登录</a></li>
+        <% if(isLogin) { %>
+          <li><img src="<%= user.avatar %>" alt=""></li>
+          <li><span title="<%= user.username %>"><%= user.username %></span></li>
+          <li><span class="line"> | </span></li> 
+          <li><a href="/auth/logout" class="logout">注销</a></li>
+        <% }else{ %>
+          <li><a href="/auth/github" class="login" title="Github登录">Github登录</a></li>
+          <li><a href="/auth/jirengu" class="login" title="饥人谷登录">饥人谷登录</a></li>
+        <% } %>
+        
       </ul>
     </div>
     <div id="content">
 
     </div>
-    <dic class="stars"></dic>
+    <div class="stars"></div>
     <script src="../javascripts/index.js"></script>
   </body>
 </html>
