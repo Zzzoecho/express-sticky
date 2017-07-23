@@ -21,7 +21,7 @@ passport.use(new JirenguStrategy({
   clientID: '447ee0531b6ecaf856c7e3ee5720b149b89d9e4c8a00fae5a841a9b0064410681',
   tokenURL: 'http://user.jirengu.com/oauth/token',
   clientSecret: '512cb20230f09ac1e741a9fde04dfee6b190f248fd8e9563333b560be163e30f',
-  callbackURL: "http://localhost:3000/auth/jirengu/callback"},
+  callbackURL: "http://47.91.156.35:3737/auth/jirengu/callback"},
   function(accessToken, refreshToken, profile, done){
     done(null, profile)
   }))
@@ -46,7 +46,7 @@ router.get('/jirengu/callback',
 passport.use(new GitHubStrategy({
     clientID: '0b86eb9169d120bd5331',
     clientSecret: 'b65883c3635ff9d5a4dd40455374141576d25cd6',
-    callbackURL: "http://localhost:3000/auth/github/callback"
+    callbackURL: "http://47.91.156.35:3737/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     done(null, profile)
