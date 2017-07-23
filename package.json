@@ -16,6 +16,7 @@
     "express-session": "^1.15.4",
     "morgan": "~1.8.1",
     "node-pre-gyp": "^0.6.36",
+    "passport": "^0.3.2",
     "passport-github": "^1.1.0",
     "sequelize": "^4.3.2",
     "serve-favicon": "~2.4.2",
