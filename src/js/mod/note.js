@@ -110,9 +110,8 @@ Note.prototype = {
         }).done(function(ret){
             if(ret.status === 0){
                 Toast('update success')
-                console.log('update success')
             }else{
-                console.log(ret.error)
+                Toast(ret.errorMsg)
             }
         })
     },
@@ -124,9 +123,11 @@ Note.prototype = {
             note:msg
         }).done(function(ret){
             if(ret.status === 0){
-                _this.id = ret.data.id
+                _this.id = ret.id
                 Toast('add success')
             }else{
+                _this.$note.remove()
+                Event.fire('waterfall')
                 Toast(ret.errorMsg)
             }
         })

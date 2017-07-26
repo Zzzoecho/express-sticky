@@ -21,8 +21,13 @@ sequelize
 const Note = sequelize.define('note', {
   text: {
     type: Sequelize.STRING
+  },
+  uid: {
+    type: Sequelize.STRING
   }
 });
+// Note.drop()
+// Note.sync({force: true})
 
 // Note.sync().then(function(){  //if表不存在 创建 存在 不管
 //     Note.create({text: 'hello world'})
