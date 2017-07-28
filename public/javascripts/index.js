@@ -11055,12 +11055,12 @@ function Note(opts){
 
 Note.prototype = {
     colors: [
-        ['#ea9b35', '#efb04e'],
-        ['#dd598b', '#e672a2'],
-        ['#eee34b', '#f2eb67'],
+        ['#f05e1c', '#f68657'],
+        ['#de7e73', '#f7aa97'],
+        ['#ffc952', '#f6ea8c'],
         ['#c24226', '#d15a39'],
-        ['#c1c341', '#d0d25c'],
-        ['#3f78c3', '#5591d2']
+        ['#77919d', '#9baec8'],
+        ['#1f4e5f', '#79a8a9']
     ],
 
     defaultOpts: {
@@ -11080,6 +11080,7 @@ Note.prototype = {
         var tpl = '<div class="note">'
                 + '<div class="note-head"><span class="delete">&times;</span></div>'
                 + '<div class="note-ct" contenteditable="true"></div>' //contenteditable es5的语法 可编辑
+                + '<div class="note-footer"></div>'
                 + '</div>'
         this.$note = $(tpl)
         this.$note.find('.note-ct').html(this.opts.context)
@@ -11091,6 +11092,7 @@ Note.prototype = {
         var color = this.colors[Math.floor(Math.random() * 6)]
         this.$note.find('.note-head').css('background-color', color[0])
         this.$note.find('.note-ct').css('background-color', color[1])
+        this.$note.find('.note-footer').css('background-color', color[1])
     },
 
     setLayout: function(){
@@ -11235,7 +11237,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  transition: all .5s;\n}\n.note .note-head {\n  height: 20px;\n  background-color: #ea9b35;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: '';\n  display: block;\n  width: 64px;\n  height: 18px;\n  background: #35bba3;\n}\n.note .note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -11px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 5px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.note .delete {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  font-size: 12px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.draggable {\n  opacity: .8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
+exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  transition: all .5s;\n}\n.note .note-head {\n  height: 22px;\n  background-color: #ea9b35;\n  border-radius: 4px 4px 0 0;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: '';\n  display: block;\n  width: 64px;\n  height: 18px;\n  background: #77af97;\n}\n.note .note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -11px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 5px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.note .note-footer {\n  height: 21px;\n  border-radius: 0 0 4px 4px;\n  border-top: 1px solid #ccc;\n}\n.note .delete {\n  position: absolute;\n  top: 1px;\n  right: 4px;\n  font-size: 14px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.draggable {\n  opacity: .8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
 
 // exports
 
@@ -11334,7 +11336,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "ul,\nli,\ndiv,\na,\nspan {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  text-decoration: none;\n  font-family: 'Microsoft Yahei';\n  font-size: 14px;\n}\nbody {\n  background: url(http://oo7a0zmzl.bkt.clouddn.com/17-7-18/69501293.jpg) center center no-repeat;\n}\n#header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #222;\n  height: 40px;\n  width: 100%;\n}\n#header a {\n  color: #fff;\n  margin: 0 10px;\n}\n#header span {\n  color: #fff;\n  margin: 0 5px;\n}\n#header .add-note {\n  position: absolute;\n  top: 10px;\n  left: 5px;\n}\n#header .user-area {\n  display: inline-block;\n  position: absolute;\n  top: 10px;\n  left: 1160px;\n  vertical-align: bottom;\n  width: 100%;\n}\n#header .user-area li {\n  float: left;\n}\n#header .user-area li img {\n  margin-top: -4px;\n  width: 30px;\n  border-radius: 50%;\n}\n#header .user-area::after {\n  content: '';\n  display: block;\n  clear: both;\n}\n", ""]);
+exports.push([module.i, "ul,\nli,\ndiv,\na,\nspan {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  text-decoration: none;\n  font-family: 'Microsoft Yahei';\n  font-size: 14px;\n}\nbody {\n  background: url(http://oo7a0zmzl.bkt.clouddn.com/17-7-28/50762218.jpg) center center no-repeat;\n}\n#header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #7c7877;\n  height: 40px;\n  width: 100%;\n}\n#header a {\n  color: #fff;\n  margin: 0 10px;\n}\n#header span {\n  color: #fff;\n  margin: 0 5px;\n}\n#header .add-note {\n  position: absolute;\n  top: 10px;\n  left: 5px;\n  border: 1px solid #fff;\n  border-radius: 4px;\n  cursor: pointer;\n}\n#header .user-area {\n  display: inline-block;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  vertical-align: bottom;\n  width: 100%;\n}\n#header .user-area li {\n  float: right;\n}\n#header .user-area li img {\n  margin-top: -4px;\n  width: 30px;\n  border-radius: 50%;\n}\n#header .user-area::after {\n  content: '';\n  display: block;\n  clear: both;\n}\n", ""]);
 
 // exports
 

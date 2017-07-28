@@ -6,8 +6,9 @@
     transition: all .5s;
 
     .note-head {
-        height: 20px;
+        height: 22px;
         background-color: #ea9b35;
+        border-radius: 4px 4px 0 0;
         cursor: move;
 
         &:hover .delete {
@@ -22,21 +23,21 @@
             content: '';
             display: block;
             width: 64px;
-            height: 18px;
-            background: #35bba3;
+            height: 20px;
+            background: #77af97;
         }
 
         &:after {
             position: absolute;
             left: 50%;
             margin-left: 32px;
-            top: -11px;
+            top: -12px;
             z-index: -1;
             content: '';
             display: block;
             width: 0;
             height: 0;
-            border-left: 5px solid #299683;
+            border-left: 8px solid #299683;
             border-top: 18px solid transparent;
         }
     }
@@ -47,11 +48,17 @@
         outline: none;
     }
 
+    .note-footer {
+        height: 21px;
+        border-radius: 0 0 4px 4px;
+        border-top: 1px solid #ccc;
+    }
+
     .delete {
         position: absolute;
-        top: 4px;
+        top: 1px;
         right: 4px;
-        font-size: 12px;
+        font-size: 14px;
         color: #fff;
         cursor: pointer;
         opacity: 0;

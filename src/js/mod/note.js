@@ -12,12 +12,12 @@ function Note(opts){
 
 Note.prototype = {
     colors: [
-        ['#ea9b35', '#efb04e'],
-        ['#dd598b', '#e672a2'],
-        ['#eee34b', '#f2eb67'],
+        ['#f05e1c', '#f68657'],
+        ['#de7e73', '#f7aa97'],
+        ['#ffc952', '#f6ea8c'],
         ['#c24226', '#d15a39'],
-        ['#c1c341', '#d0d25c'],
-        ['#3f78c3', '#5591d2']
+        ['#77919d', '#9baec8'],
+        ['#1f4e5f', '#79a8a9']
     ],
 
     defaultOpts: {
@@ -37,6 +37,7 @@ Note.prototype = {
         var tpl = '<div class="note">'
                 + '<div class="note-head"><span class="delete">&times;</span></div>'
                 + '<div class="note-ct" contenteditable="true"></div>' //contenteditable es5的语法 可编辑
+                + '<div class="note-footer"></div>'
                 + '</div>'
         this.$note = $(tpl)
         this.$note.find('.note-ct').html(this.opts.context)
@@ -48,6 +49,7 @@ Note.prototype = {
         var color = this.colors[Math.floor(Math.random() * 6)]
         this.$note.find('.note-head').css('background-color', color[0])
         this.$note.find('.note-ct').css('background-color', color[1])
+        this.$note.find('.note-footer').css('background-color', color[1])
     },
 
     setLayout: function(){
