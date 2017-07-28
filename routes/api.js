@@ -28,7 +28,10 @@ router.post('/notes/edit', function(req, res, next){
         return res.send({status:1, errorMsg: '请先登录'})
     }
 
-    Note.update({text: req.body.note}, {where:{id:req.body.id}}).then( () => {
+    var noteId = req.body.id;
+    var note = req.body.note;
+    var uid = req.session.user.id;
+    Note.update({text: note}, {where:{id:noteId, uid: uid}}).then( () => {
         res.send({status: 0})
     })
 })

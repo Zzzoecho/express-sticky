@@ -125,8 +125,8 @@ Note.prototype = {
             note:msg
         }).done(function(ret){
             if(ret.status === 0){
-                _this.id = ret.id
                 Toast('add success')
+                console.log(note)
             }else{
                 _this.$note.remove()
                 Event.fire('waterfall')
