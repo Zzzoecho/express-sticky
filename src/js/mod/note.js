@@ -46,12 +46,12 @@ Note.prototype = {
         var tpl = '<div class="note">'
                 + '<div class="note-head"><span class="delete">&times;</span></div>'
                 + '<div class="note-ct" contenteditable="true"></div>' //contenteditable es5的语法 可编辑
-                + '<div class="note-footer"><span class="username"><span></div>'
+                + '<div class="note-footer"><span class="username"></span><span class="time"></span></div>'
                 + '</div>'
         this.$note = $(tpl)
         this.$note.find('.note-ct').html(this.opts.context)
-        this.$note.find('.note-footer').html(this.opts.time)
-        this.$note.find('.note-footer .username').html(this.opts.username)
+        this.$note.find('.note-footer .time').text(this.opts.time)
+        this.$note.find('.note-footer .username').text(this.opts.username)
         this.opts.$ct.append(this.$note)
         if(!this.id) this.$note.css('bottom', '10px')
     },

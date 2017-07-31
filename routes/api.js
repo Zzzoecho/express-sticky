@@ -23,9 +23,10 @@ router.post('/notes/add', function(req, res, next){
         return res.send({status:1, errorMsg: '请先登录'})
     }
     var uid = req.session.user.id
+    var username = req.session.user.username
     var note = req.body.note
-    
-    Note.create({text: note, uid:uid}).then(function(){
+
+    Note.create({text: note, uid:uid, username: username}).then(function(){
         res.send({status: 0})
     }).catch(function(){
         res.send({status: 1,errorMsg:'数据库出错'})

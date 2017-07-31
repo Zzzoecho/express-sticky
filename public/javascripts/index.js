@@ -11008,11 +11008,11 @@ var NoteManager = (function(){
             .done(function(ret){
                 if(ret.status == 0){
                     $.each(ret.data, function(idx, article){
-                        
                         new Note({
                             id: article.id,
                             context: article.text,
-                            time: article.createdAt
+                            time: article.createdAt,
+                            username: article.username
                         })
                     })
                     Event.fire('waterfall')
@@ -11090,12 +11090,12 @@ Note.prototype = {
         var tpl = '<div class="note">'
                 + '<div class="note-head"><span class="delete">&times;</span></div>'
                 + '<div class="note-ct" contenteditable="true"></div>' //contenteditable es5的语法 可编辑
-                + '<div class="note-footer"><span class="username"><span></div>'
+                + '<div class="note-footer"><span class="username"></span><span class="time"></span></div>'
                 + '</div>'
         this.$note = $(tpl)
         this.$note.find('.note-ct').html(this.opts.context)
-        this.$note.find('.note-footer').html(this.opts.time)
-        this.$note.find('.note-footer .username').html(this.opts.username)
+        this.$note.find('.note-footer .time').text(this.opts.time)
+        this.$note.find('.note-footer .username').text(this.opts.username)
         this.opts.$ct.append(this.$note)
         if(!this.id) this.$note.css('bottom', '10px')
     },
@@ -11249,7 +11249,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  transition: all .5s;\n}\n.note .note-head {\n  height: 22px;\n  background-color: #ea9b35;\n  border-radius: 4px 4px 0 0;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: '';\n  display: block;\n  width: 64px;\n  height: 20px;\n  background: #77af97;\n}\n.note .note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -12px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 8px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.note .note-footer {\n  height: 21px;\n  border-radius: 0 0 4px 4px;\n  border-top: 1px solid #ccc;\n  font-size: 12px;\n  color: #666;\n  padding: 2px 0 0 98px;\n}\n.note .delete {\n  position: absolute;\n  top: 1px;\n  right: 4px;\n  font-size: 14px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.draggable {\n  opacity: .8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
+exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 170px;\n  margin: 20px 10px;\n  transition: all .5s;\n}\n.note .note-head {\n  height: 22px;\n  background-color: #ea9b35;\n  border-radius: 4px 4px 0 0;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: '';\n  display: block;\n  width: 64px;\n  height: 20px;\n  background: #77af97;\n}\n.note .note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -12px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 8px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.note .note-footer {\n  height: 21px;\n  border-radius: 0 0 4px 4px;\n  border-top: 1px solid #ccc;\n  font-size: 12px;\n  color: #666;\n  padding: 2px 0 0 8px;\n}\n.note .note-footer span {\n  font-size: 12px;\n}\n.note .note-footer .time {\n  float: right;\n  padding-right: 5px;\n}\n.note .delete {\n  position: absolute;\n  top: 1px;\n  right: 4px;\n  font-size: 14px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.draggable {\n  opacity: .8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
 
 // exports
 
