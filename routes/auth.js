@@ -6,13 +6,10 @@ var GitHubStrategy = require('passport-github').Strategy
 var JirenguStrategy = require('passport-jirengu').Strategy
 
 passport.serializeUser(function(user,done) {
-    console.log('----serializeUser------')
-    console.log(user)
     done(null, user)
 })
 
 passport.deserializeUser(function(obj, done){
-  console.log('---deserializeUser---')
   done(null, obj)
 })
 
@@ -46,7 +43,7 @@ router.get('/jirengu/callback',
 passport.use(new GitHubStrategy({
     clientID: '0b86eb9169d120bd5331',
     clientSecret: 'b65883c3635ff9d5a4dd40455374141576d25cd6',
-    callbackURL: "http://47.91.156.35:3737/auth/github/callback"
+    callbackURL: "http://localhost:3737/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     done(null, profile)
@@ -60,7 +57,7 @@ router.get('/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
     console.log('github success.....')
-    console.log(req.user)
+    // console.log(req.user)
     req.session.user = {
       id: req.user.id,
       username: req.user.displayName || req.user.username,

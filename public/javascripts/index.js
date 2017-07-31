@@ -11168,7 +11168,6 @@ Note.prototype = {
             note:msg
         }).done(function(ret){
             if(ret.status === 0){
-                _this.id = ret.id
                 Toast('add success')
             }else{
                 _this.$note.remove()
@@ -11237,7 +11236,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  transition: all .5s;\n}\n.note .note-head {\n  height: 22px;\n  background-color: #ea9b35;\n  border-radius: 4px 4px 0 0;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: '';\n  display: block;\n  width: 64px;\n  height: 18px;\n  background: #77af97;\n}\n.note .note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -11px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 5px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.note .note-footer {\n  height: 21px;\n  border-radius: 0 0 4px 4px;\n  border-top: 1px solid #ccc;\n}\n.note .delete {\n  position: absolute;\n  top: 1px;\n  right: 4px;\n  font-size: 14px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.draggable {\n  opacity: .8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
+exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  transition: all .5s;\n}\n.note .note-head {\n  height: 22px;\n  background-color: #ea9b35;\n  border-radius: 4px 4px 0 0;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: -32px;\n  content: '';\n  display: block;\n  width: 64px;\n  height: 20px;\n  background: #77af97;\n}\n.note .note-head:after {\n  position: absolute;\n  left: 50%;\n  margin-left: 32px;\n  top: -12px;\n  z-index: -1;\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border-left: 8px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #efb04e;\n  outline: none;\n}\n.note .note-footer {\n  height: 21px;\n  border-radius: 0 0 4px 4px;\n  border-top: 1px solid #ccc;\n}\n.note .delete {\n  position: absolute;\n  top: 1px;\n  right: 4px;\n  font-size: 14px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.draggable {\n  opacity: .8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
 
 // exports
 
@@ -11336,7 +11335,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "ul,\nli,\ndiv,\na,\nspan {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  text-decoration: none;\n  font-family: 'Microsoft Yahei';\n  font-size: 14px;\n}\nbody {\n  background: url(http://oo7a0zmzl.bkt.clouddn.com/17-7-28/50762218.jpg) center center no-repeat;\n}\n#header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #7c7877;\n  height: 40px;\n  width: 100%;\n}\n#header a {\n  color: #fff;\n  margin: 0 10px;\n}\n#header span {\n  color: #fff;\n  margin: 0 5px;\n}\n#header .add-note {\n  position: absolute;\n  top: 10px;\n  left: 5px;\n  border: 1px solid #fff;\n  border-radius: 4px;\n  cursor: pointer;\n}\n#header .user-area {\n  display: inline-block;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  vertical-align: bottom;\n  width: 100%;\n}\n#header .user-area li {\n  float: right;\n}\n#header .user-area li img {\n  margin-top: -4px;\n  width: 30px;\n  border-radius: 50%;\n}\n#header .user-area::after {\n  content: '';\n  display: block;\n  clear: both;\n}\n", ""]);
+exports.push([module.i, "ul,\nli,\ndiv,\na,\nspan {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  text-decoration: none;\n  font-family: 'Microsoft Yahei';\n  font-size: 14px;\n}\nbody {\n  background: url(http://oo7a0zmzl.bkt.clouddn.com/17-7-28/50762218.jpg) center center no-repeat;\n}\n#header {\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #A69989;\n  opacity: .8;\n  box-shadow: 0 5px 5px 5px rgba(166, 153, 137, 0.6);\n  height: 40px;\n  width: 100%;\n}\n#header a {\n  color: #222;\n  margin: 0 10px;\n}\n#header span {\n  color: #222;\n  margin: 0 5px;\n}\n#header .add-note {\n  position: absolute;\n  top: 9px;\n  left: 5px;\n  border: 1px solid #222;\n  border-radius: 4px;\n}\n#header .user-area {\n  display: inline-block;\n  position: absolute;\n  top: 10px;\n  left: 1195px;\n  vertical-align: bottom;\n  width: 50%;\n}\n#header .user-area .login {\n  margin-left: 60px;\n}\n#header .user-area li {\n  float: left;\n}\n#header .user-area li img {\n  margin-top: -4px;\n  width: 30px;\n  border-radius: 50%;\n}\n#header .user-area::after {\n  content: '';\n  display: block;\n  clear: both;\n}\n", ""]);
 
 // exports
 
