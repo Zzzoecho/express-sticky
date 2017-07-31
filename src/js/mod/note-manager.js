@@ -10,10 +10,10 @@ var NoteManager = (function(){
                     $.each(ret.data, function(idx, article){
                         new Note({
                             id: article.id,
-                            context: article.text
+                            context: article.text,
+                            time: article.createdAt
                         })
                     })
-
                     Event.fire('waterfall')
               }else{
                   Toast(ret.errorMsg)

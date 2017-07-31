@@ -5,7 +5,7 @@ var Event = require('./events')
 
 function Note(opts){
     this.initOpts(opts)
-    this.createNote()
+    this.createNote(opts)
     this.setStyle()
     this.bindEvent()
 }
@@ -23,7 +23,8 @@ Note.prototype = {
     defaultOpts: {
         id: '',
         $ct: $('#content').length>0 ? $('#content'):$('body'),  //默认存放note的容器
-        context: 'input here'
+        context: 'input here',
+        time: ''
     },
 
     initOpts: function(opts){
@@ -31,9 +32,10 @@ Note.prototype = {
         if(this.opts.id){
             this.id = this.opts.id
         }
+        this.opts.time = new Date(this.opts.time).toLocaleDateString()
     },
 
-    createNote: function(){
+    createNote: function(opts){
         var tpl = '<div class="note">'
                 + '<div class="note-head"><span class="delete">&times;</span></div>'
                 + '<div class="note-ct" contenteditable="true"></div>' //contenteditable es5的语法 可编辑
@@ -41,6 +43,7 @@ Note.prototype = {
                 + '</div>'
         this.$note = $(tpl)
         this.$note.find('.note-ct').html(this.opts.context)
+        this.$note.find('.note-footer').html(this.opts.time)
         this.opts.$ct.append(this.$note)
         if(!this.id) this.$note.css('bottom', '10px')
     },
