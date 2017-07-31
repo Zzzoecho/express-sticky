@@ -26,8 +26,6 @@ router.post('/notes/add', function(req, res, next){
     var note = req.body.note
     
     Note.create({text: note, uid:uid}).then(function(){
-        // var Ctime = notes.createdAt
-        // console.log(Ctime)
         res.send({status: 0})
     }).catch(function(){
         res.send({status: 1,errorMsg:'数据库出错'})
