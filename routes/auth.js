@@ -43,7 +43,7 @@ router.get('/jirengu/callback',
 passport.use(new GitHubStrategy({
     clientID: '0b86eb9169d120bd5331',
     clientSecret: 'b65883c3635ff9d5a4dd40455374141576d25cd6',
-    callbackURL: "http://localhost:3737/auth/github/callback"
+    callbackURL: "http://47.91.156.35:3737/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     done(null, profile)
